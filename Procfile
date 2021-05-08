@@ -1,1 +1,1 @@
-web: java -jar target/weather-app-0.0.1-SNAPSHOT.jar $PORT
+java $JAVA_OPTS -jar target/weather-app-0.0.1-SNAPSHOT.jar --server.port=$PORT $JAR_OPTS
