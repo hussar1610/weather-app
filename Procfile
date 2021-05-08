@@ -1,1 +1,1 @@
-java $JAVA_OPTS -jar target/weather-app-0.0.1-SNAPSHOT.jar --server.port=$PORT $JAR_OPTS
+web: java -Dspring.profiles.active=default -Dserver.port=$PORT -jar target/weather-app-0.0.1-SNAPSHOT.jar
