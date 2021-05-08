@@ -45,7 +45,6 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>
@@ -121,6 +120,22 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>com.heroku.sdk</groupId>
+				<artifactId>heroku-maven-plugin</artifactId>
+				<configuration>
+					<appName>the-weather-app2</appName>
+					<includeTarget>false</includeTarget>
+					<includes>
+						<include>${basedir}/target/weather-app-0.0.1-SNAPSHOT.jar</include>
+					</includes>
+					<jdkVersion>1.8</jdkVersion>
+					<processTypes>
+						<web>java $JAVA_OPTS -jar weather-app-0.0.1-SNAPSHOT.jar</web>
+					</processTypes>
+				</configuration>
 			</plugin>
 
 		</plugins>
