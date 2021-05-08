@@ -1,0 +1,6 @@
+package pl.makselan.weatherapp.entity;
+
+public enum ERole {
+    ROLE_USER,
+    ROLE_ADMIN
+}
