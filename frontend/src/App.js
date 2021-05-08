@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar';
 import Home from "./routes/Home";
-import {HashRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, HashRouter, Route, Switch} from 'react-router-dom';
 import Login from "./routes/Login";
 import {useEffect, useState} from "react";
 import Register from "./routes/Register";
@@ -18,7 +18,7 @@ function App() {
     }, []);
 
   return (
-    <HashRouter>
+    <BrowserRouter>
         <div className="App">
             <Navbar loggedUser={loggedUser} setLoggedUser={setLoggedUser}/>
             <div className="content">
@@ -35,7 +35,7 @@ function App() {
                 </Switch>
             </div>
         </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 
 }
