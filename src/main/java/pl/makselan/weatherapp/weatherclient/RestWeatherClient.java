@@ -13,12 +13,8 @@ import java.util.List;
 @Service
 public class RestWeatherClient {
 
-    @Value("${api.key}")
-    private String API_KEY;
-
-    private final String GET_WEATHER_URI =
-            "http://api.weatherstack.com/current?access_key="
-            + API_KEY + "&query=";
+    @Value("${api.url}")
+    private String API_URL;
 
     private RestTemplate restTemplate;
 
@@ -31,7 +27,7 @@ public class RestWeatherClient {
 
     public String getWeather(String locationQuery)  {
         Weather weather = restTemplate
-                .getForObject(GET_WEATHER_URI+locationQuery, Weather.class);
+                .getForObject(API_URL+locationQuery, Weather.class);
 
         String weatherJson = null;
         try {
@@ -46,9 +42,7 @@ public class RestWeatherClient {
     public String getWeather(List<String> locations){
         List<Weather> locationsWeather = new ArrayList<>();
         locations
-                .forEach( (location) ->
-                        locationsWeather.add(restTemplate.getForObject(GET_WEATHER_URI + location, Weather.class))
-                );
+                .forEach( (location) -> locationsWeather.add(restTemplate.getForObject(API_URL + location, Weather.class)));
         String locationsWeatherJson = null;
         try{
             locationsWeatherJson = objectMapper.writeValueAsString(locationsWeather);

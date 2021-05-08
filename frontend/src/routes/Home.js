@@ -103,7 +103,7 @@ const Home = ({loggedUser}) => {
                 </div>
               {loggedUser && locationsWeatherError && <div className="message"><h2 className="error">{locationsWeatherError}</h2></div>}
               {loggedUser && locationsWeatherLoading && <div className="message"><h2>Weather data loading...</h2></div>}
-              {loggedUser && locationsWeather&& !locationsWeatherError &&
+              {loggedUser && locationsWeather && !locationsWeatherError &&
                     <div className="locations-section">
                         <div className="locations-title">
                             <h2 className="successful">Saved locations</h2>
