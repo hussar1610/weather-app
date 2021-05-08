@@ -33,6 +33,11 @@ public class WeatherController {
         this.savedLocationRepository = savedLocationRepository;
     }
 
+    @GetMapping("/")
+    public String index() {
+        return "Hello there! I'm running.";
+    }
+
     @GetMapping("weather/{location}")
     public String getWeather(@PathVariable String location){
         return restWeatherClient.getWeather(location);
