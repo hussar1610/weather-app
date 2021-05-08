@@ -8,6 +8,7 @@ import authenticationService from "./services/authenticationService";
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
+import 'react-app-polyfill/stable'
 
 function App() {
 
