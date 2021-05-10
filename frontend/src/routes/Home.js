@@ -40,7 +40,7 @@ const Home = ({loggedUser}) => {
     const saveLocation = () => {
         if(savedLocationsCount < 3){
             setSaveLocationLoading(true);
-            let  locationName = weatherData.location.name;
+            let  locationName = weatherData.location.name + ' ' + weatherData.location.country;
             if(locationName){
                     userService.saveLocation(locationName)
                         .then(() => {
@@ -56,7 +56,7 @@ const Home = ({loggedUser}) => {
 
     const deleteLocation = (e) => {
         let weatherId = e.target.parentNode.getAttribute('id');
-        let locationName = locationsWeather[weatherId].location.name
+        let locationName = locationsWeather[weatherId].location.name + ' ' + locationsWeather[weatherId].location.country;
         if(locationName){
                 userService.deleteLocation(locationName)
                     .then(() => {
