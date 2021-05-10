@@ -13,7 +13,7 @@ const Home = ({loggedUser}) => {
     const BASE_WEATHER_URL = "https://the-current-weather.herokuapp.com/api/weather/";
     const LOCATION_URL = "http://localhost:8080/api/locations/weather";
 
-    const [weatherUrl, setWeatherUrl] = useState('http://localhost:8080/api/weather/New York, United States of America');
+    const [weatherUrl, setWeatherUrl] = useState('https://the-current-weather.herokuapp.com/api/weather/New York, United States of America');
     const [typedLocation, setTypedLocation] = useState('New York, United States of America');
     const [savedLocationsCount, setSavedLocationsCount] = useState(0);
     const [saveLocationLoading, setSaveLocationLoading] = useState(false);
