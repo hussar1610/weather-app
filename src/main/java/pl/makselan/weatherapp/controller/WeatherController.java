@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import pl.makselan.weatherapp.entity.AppUser;
 import pl.makselan.weatherapp.entity.SavedLocation;
 import pl.makselan.weatherapp.repository.AppUserRepository;
-import pl.makselan.weatherapp.repository.SavedLocationRepository;
 import pl.makselan.weatherapp.security.AppUserDetails;
 import pl.makselan.weatherapp.weatherclient.RestWeatherClient;
 
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/")
 public class WeatherController {
@@ -23,14 +22,9 @@ public class WeatherController {
 
     private final AppUserRepository appUserRepository;
 
-    private final SavedLocationRepository savedLocationRepository;
-
-    public WeatherController(RestWeatherClient restWeatherClient,
-                             AppUserRepository appUserRepository,
-                             SavedLocationRepository savedLocationRepository) {
+    public WeatherController(RestWeatherClient restWeatherClient, AppUserRepository appUserRepository) {
         this.restWeatherClient = restWeatherClient;
         this.appUserRepository = appUserRepository;
-        this.savedLocationRepository = savedLocationRepository;
     }
 
     @GetMapping("/")
@@ -51,9 +45,7 @@ public class WeatherController {
 
         List<String> savedLocationsNames = new ArrayList<>();
         savedLocations
-                .forEach(location -> {
-                    savedLocationsNames.add(location.getName());
-                });
+                .forEach(location -> savedLocationsNames.add(location.getName()));
 
         return restWeatherClient.getWeather(savedLocationsNames);
     }
