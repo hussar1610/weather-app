@@ -1,6 +1,6 @@
 import authenticationHeader from "./authenticationHeader";
 
-const LOCATION_URL = "http://localhost:8080/api/locations/";
+const LOCATION_URL = "https://the-current-weather.herokuapp.com/api/locations/";
 
 const saveLocation = (location) => {
 

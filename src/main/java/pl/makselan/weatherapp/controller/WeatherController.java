@@ -18,9 +18,9 @@ import java.util.Set;
 @RequestMapping("/api/")
 public class WeatherController {
 
-    private final RestWeatherClient restWeatherClient;
+    private RestWeatherClient restWeatherClient;
 
-    private final AppUserRepository appUserRepository;
+    private AppUserRepository appUserRepository;
 
     public WeatherController(RestWeatherClient restWeatherClient, AppUserRepository appUserRepository) {
         this.restWeatherClient = restWeatherClient;

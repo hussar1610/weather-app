@@ -16,13 +16,15 @@ public class SavedLocation {
 
     @ManyToMany(mappedBy = "savedLocations")
     @JsonBackReference
-    private Set<AppUser> appUsers  = new HashSet<AppUser>();
+    private Set<AppUser> appUsers  = new HashSet<>();
 
     public SavedLocation() {}
 
     public SavedLocation(String query) {
         this.name = query;
     }
+
+    public Long getId() { return id; }
 
     public String getName() {
         return name;
@@ -35,6 +37,7 @@ public class SavedLocation {
     public Set<AppUser> getAppUsers() {
         return appUsers;
     }
+
 
     @Override
     public boolean equals(Object o) {

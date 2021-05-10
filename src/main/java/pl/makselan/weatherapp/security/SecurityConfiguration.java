@@ -19,12 +19,11 @@ import pl.makselan.weatherapp.security.jwt.AuthTokenFilter;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    private AppUserDetailsService appUserDetailsService;
+    private  AppUserDetailsService appUserDetailsService;
 
-    private AuthEntryPointJwt unauthorizedHandler;
+    private  AuthEntryPointJwt unauthorizedHandler;
 
     private AuthTokenFilter authTokenFilter;
-
 
     public SecurityConfiguration(AppUserDetailsService appUserDetailsService,
                                  AuthEntryPointJwt unauthorizedHandler,

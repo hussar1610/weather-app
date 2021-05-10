@@ -1,7 +1,6 @@
 import  { useState} from 'react';
 
-const API_URL = "http://localhost:8080/api/authentication/";
-
+const API_URL = "https://the-current-weather.herokuapp.com/api/authentication/";
 const useLogin = () => {
 
     const [isLoading, setIsLoading] = useState(false);

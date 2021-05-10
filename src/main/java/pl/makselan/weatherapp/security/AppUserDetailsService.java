@@ -11,7 +11,7 @@ import pl.makselan.weatherapp.repository.AppUserRepository;
 @Service
 public class AppUserDetailsService implements UserDetailsService {
 
-    private final AppUserRepository appUserRepository;
+    private AppUserRepository appUserRepository;
 
     public AppUserDetailsService(AppUserRepository appUserRepository) {
         this.appUserRepository = appUserRepository;

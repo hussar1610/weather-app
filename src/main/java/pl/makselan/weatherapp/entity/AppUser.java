@@ -46,7 +46,7 @@ public class AppUser {
     )
 
     @JsonManagedReference
-    private Set<SavedLocation> savedLocations = new HashSet<SavedLocation>();
+    private final Set<SavedLocation> savedLocations = new HashSet<>();
 
     public AppUser() {
     }
