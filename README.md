@@ -12,6 +12,9 @@ Application consist of two parts:
 - provides GUI for: Login & Register process, Presenting weather data, saving/removing locations by logged user 
 - is responsive
 
+**You can try this app on heroku:**
+https://the-current-weather.herokuapp.com
+
 ## Technologies 
 * Java 11
 * Spring Boot
