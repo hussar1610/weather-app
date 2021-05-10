@@ -22,12 +22,20 @@ Application consist of two parts:
 * HTML, CSS, JS  
 * PostgreSQL 
 
-## Screenshoots 
+## Screenshoots
 
-### Login view 
+### Logged user view
 
-![Example screenshot](./screenshots/login.PNG)
+![Example screenshot](./screenshots/screen1.PNG)
 
-### Main page view
+### Not logged in user view
 
-![Example screenshot](./screenshots/page1.PNG)
+![Example screenshot](./screenshots/screen2.PNG)
+
+### Register view
+
+![Example screenshot](./screenshots/screen3.PNG)
+
+### Responsiveness example
+
+![Example screenshot](./screenshots/screen4.PNG)
