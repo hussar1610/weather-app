@@ -10,7 +10,7 @@ toast.configure()
 
 const Home = ({loggedUser}) => {
 
-    const BASE_WEATHER_URL = "http://localhost:8080/api/weather/";
+    const BASE_WEATHER_URL = "https://the-current-weather.herokuapp.com/api/weather/";
     const LOCATION_URL = "http://localhost:8080/api/locations/weather";
 
     const [weatherUrl, setWeatherUrl] = useState('http://localhost:8080/api/weather/New York, United States of America');
